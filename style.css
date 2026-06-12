@@ -808,3 +808,46 @@ img {
     grid-template-columns: 44px 1fr;
   }
 }
+
+/* PHOTO / AVATAR FIXES */
+.avatar {
+  overflow: hidden;
+}
+
+.avatar img,
+.avatar-img,
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.panel-top {
+  align-items: center;
+}
+
+.hero-panel-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep any standalone profile image centered and proportional */
+.profile-photo,
+.hero-photo,
+.page-photo {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* If the right-side image is wrapped in a flex row, keep it aligned */
+.panel-top > * {
+  flex-shrink: 0;
+}
+
+/* Make any image inside the hero panel look intentional */
+.hero-panel img {
+  border-radius: inherit;
+}
+
