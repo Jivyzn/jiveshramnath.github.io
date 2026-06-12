@@ -1,4 +1,4 @@
-cconst toggle = document.querySelector('[data-menu-toggle]');
+const toggle = document.querySelector('[data-menu-toggle]');
 const panel = document.querySelector('[data-mobile-panel]');
 
 function closePanel() {
