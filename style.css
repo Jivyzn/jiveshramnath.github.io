@@ -854,3 +854,52 @@ body.vireo-page { background: #000; }
   .noise-canvas { display: none; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Independent-source cards reinforce the same public identity without breaking the editorial system. */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+.evidence-card {
+  min-height: 250px;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  color: var(--paper);
+  background: var(--ink-2);
+  text-decoration: none;
+  transition: background .25s ease, transform .25s ease;
+}
+.evidence-card:hover,
+.evidence-card:focus-visible {
+  background: var(--panel);
+}
+.evidence-source,
+.evidence-action {
+  color: var(--acid);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.evidence-card strong {
+  max-width: 18ch;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+.evidence-card p {
+  max-width: 48ch;
+  color: var(--muted);
+}
+.evidence-action { margin-top: auto; }
+@media (max-width: 760px) {
+  .evidence-grid { grid-template-columns: 1fr; }
+  .evidence-card { min-height: 220px; }
+}
