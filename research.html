@@ -1,141 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Research page for Jivesh Ramnath focusing on edge AI, assistive technology, object detection, and deployment engineering." />
-  <meta name="theme-color" content="#050816" />
-  <title>Research | Jivesh Ramnath</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research direction of Jivesh Ramnath across deployable edge AI, assistive technology, autonomous robotics and road-risk modelling.">
+  <meta name="theme-color" content="#070806">
+  <meta name="color-scheme" content="dark">
+  <title>Research — Jivesh Ramnath</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://jiveshramnath.co.za/research.html">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="research">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="noise-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="container">
-      <nav class="navbar">
-        <a class="brand" href="index.html">
-          <div class="brand-mark">JR</div>
-          <span>Jivesh Ramnath</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="projects.html">Projects</a>
-          <a href="achievements.html">Achievements</a>
-          <a href="research.html">Research</a>
-          <a class="nav-cta" href="mailto:jivyzn@gmail.com">Contact</a>
-        </div>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>☰</button>
-      </nav>
-      <div class="mobile-panel" data-mobile-panel>
-        <a href="index.html" data-close-panel>Home</a>
-        <a href="projects.html" data-close-panel>Projects</a>
-        <a href="achievements.html" data-close-panel>Achievements</a>
-        <a href="research.html" data-close-panel>Research</a>
-        <a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a>
-      </div>
-    </div>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JR</span><span>Jivesh Ramnath</span></a>
+      <div class="nav-links"><a href="index.html" data-nav-link>Home</a><a href="projects.html" data-nav-link>Projects</a><a href="achievements.html" data-nav-link>Proof</a><a href="research.html" data-nav-link>Research</a></div>
+      <div class="nav-right"><span class="nav-status"><span class="status-dot"></span> Active questions</span><a class="button ghost" href="mailto:jivyzn@gmail.com">Contact</a><button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>☰</button></div>
+    </nav>
+    <div class="mobile-panel" data-mobile-panel><a href="index.html" data-nav-link data-close-panel>Home</a><a href="projects.html" data-nav-link data-close-panel>Projects</a><a href="achievements.html" data-nav-link data-close-panel>Proof</a><a href="research.html" data-nav-link data-close-panel>Research</a><a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a></div>
   </header>
-  
-  <main>
+
+  <main id="main">
     <section class="page-hero">
       <div class="container">
-        <div class="reveal">
-          <div class="badge"><span class="eyebrow-dot"></span> Research direction</div>
-          <h1><span class="gradient-text">Research</span> built around impact.</h1>
-          <p>
-            This page turns your profile into something scholarship committees and project evaluators understand immediately:
-            what problems you work on, how you work, and why the work matters.
-          </p>
+        <div class="page-hero-grid">
+          <div><div class="kicker reveal">Research direction / deployment first</div><h1 class="page-title reveal">Useful<br><span class="acid">under pressure.</span></h1></div>
+          <p class="page-deck reveal">My research interest sits where algorithms meet limited compute, unreliable connectivity, uncertain environments and users who cannot tolerate fragile demos.</p>
         </div>
+        <div class="page-rule"></div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container research-grid">
+        <article class="research-card wide reveal">
+          <span class="section-index">[01] RESEARCH POSITION</span>
+          <h2>Deployment is part of the research question.</h2>
+          <p>Accuracy in isolation is not enough. A useful system must also manage latency, power, model size, sensor uncertainty, privacy, affordability and the clarity of its feedback.</p>
+          <ul class="question-list">
+            <li><span>Q01</span>How much accuracy can be preserved when perception moves from a workstation to low-cost edge hardware?</li>
+            <li><span>Q02</span>How should visual, distance and haptic signals be fused when any single sensor can fail?</li>
+            <li><span>Q03</span>How can a system communicate uncertainty without overwhelming the user?</li>
+          </ul>
+        </article>
+        <article class="research-card reveal">
+          <span class="section-index">CURRENT THEME</span>
+          <h2>Assistive edge AI</h2>
+          <p>Offline computer vision for mobility and environmental awareness, designed around privacy, response time and affordable hardware.</p>
+        </article>
+        <article class="research-card reveal">
+          <span class="section-index">CURRENT THEME</span>
+          <h2>Autonomous robotics</h2>
+          <p>Perception and control for small rovers operating with limited sensing, imperfect terrain and explicit mission rules.</p>
+        </article>
+        <article class="research-card wide reveal">
+          <span class="section-index">CURRENT THEME</span>
+          <h2>Predictive public-safety systems</h2>
+          <p>Risk modelling that converts historic crashes, time, weather and road context into interpretable location-hour risk estimates. The goal is decision support, not a false promise of certainty.</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
-      <div class="container research-canvas">
-        <div class="research-diagram reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Core workflow</div>
-          <div class="research-flow" style="margin-top:16px;">
-            <div class="flow-step">
-              <div class="flow-index">1</div>
-              <p><span class="highlight">Problem selection:</span> choose a real-world constraint such as mobility, cost, or limited access.</p>
-            </div>
-            <div class="flow-step">
-              <div class="flow-index">2</div>
-              <p><span class="highlight">Data strategy:</span> collect, annotate, and structure data so the model can actually learn useful behavior.</p>
-            </div>
-            <div class="flow-step">
-              <div class="flow-index">3</div>
-              <p><span class="highlight">Model development:</span> train and compare computer vision or ML approaches with practical metrics.</p>
-            </div>
-            <div class="flow-step">
-              <div class="flow-index">4</div>
-              <p><span class="highlight">Deployment:</span> optimize for edge devices like Raspberry Pi and keep the solution fast, offline, and stable.</p>
-            </div>
-          </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="section-index">[02] WORKING METHOD</span><h2 class="section-title">A loop that ends in the world, not in a notebook.</h2></div>
+          <p class="section-intro">Each stage exposes different failure modes. Skipping one usually moves the failure downstream.</p>
         </div>
-        <div class="card reveal">
-          <h3>Research themes</h3>
-          <p>
-            The site positions you as someone working across accessibility, edge AI, object detection, deployment engineering, and affordable robotics.
-            That is much stronger than a vague “interested in AI” statement.
-          </p>
-          <div class="chips" style="margin-top:18px;">
-            <span class="chip">Assistive technology</span>
-            <span class="chip">Edge inference</span>
-            <span class="chip">Object detection</span>
-            <span class="chip">Sensor fusion</span>
-            <span class="chip">Low-cost design</span>
-            <span class="chip">Dataset quality</span>
-          </div>
-          <div style="margin-top:18px;" class="big-stat">
-            <strong>Research angle</strong>
-            <span>Build systems that keep working without internet, without expensive hardware, and without sacrificing safety or usability.</span>
-          </div>
+        <div class="method-flow reveal">
+          <div class="method-step"><b>01</b><strong>Frame</strong><p>Define the user, environment, failure cost and measurable outcome.</p></div>
+          <div class="method-step"><b>02</b><strong>Build evidence</strong><p>Collect data, annotate carefully and inspect where the dataset lies.</p></div>
+          <div class="method-step"><b>03</b><strong>Compare</strong><p>Train baselines, test alternatives and measure the real trade-offs.</p></div>
+          <div class="method-step"><b>04</b><strong>Deploy</strong><p>Profile on target hardware, observe field failures and iterate.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid cols-2">
-        <div class="card reveal">
-          <h3>What is being optimized</h3>
-          <p>Latency, reliability, battery usage, affordability, user feedback clarity, and deployment simplicity.</p>
+    <section class="section compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="section-index">[03] VIREO ITERATION RECORD</span><h2 class="section-title">Model improvement came from the whole pipeline.</h2></div>
+          <p class="section-intro">These recorded project results show the progression across model choice, dataset quality and training iteration. They should be read as project-specific results, not universal benchmarks.</p>
         </div>
-        <div class="card reveal">
-          <h3>Why the work matters</h3>
-          <p>It is the difference between a demo and a device that can genuinely help people in the field.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Methods used</h3>
-          <p>Python, PyTorch, YOLOv8, OpenCV, CAD, electronics prototyping, and iterative testing against real constraints.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Next direction</h3>
-          <p>More rigorous benchmarking, better datasets, cleaner hardware integration, and sharper product-level presentation.</p>
+        <div class="research-card wide reveal" style="min-height:auto; max-width:none;">
+          <table class="benchmark-table">
+            <thead><tr><th>Iteration</th><th>Model</th><th>Recorded result</th><th>Lesson</th></tr></thead>
+            <tbody>
+              <tr><td>Baseline</td><td>YOLOv8n</td><td>29%</td><td>Speed alone could not compensate for weak coverage.</td></tr>
+              <tr><td>Expanded run</td><td>YOLOv8n</td><td>63%</td><td>Training and data improvements materially changed the outcome.</td></tr>
+              <tr><td>High-capacity run</td><td>YOLOv8m</td><td>87%</td><td>Capacity helped, but created a harder edge-deployment problem.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
+
+    <section class="section compact"><div class="container"><div class="contact-panel reveal"><h2>Research should survive contact with reality.</h2><a class="button" href="vireo.html">Open the Vireo case</a></div></div></section>
   </main>
-    
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <strong>Jivesh Ramnath</strong>
-          <div style="margin-top:8px;">Machine Learning Student | AI & Computer Vision Developer | Embedded AI</div>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:jivyzn@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="projects.html">Projects</a>
-          <a href="research.html">Research</a>
-        </div>
-      </div>
-      <div style="margin-top:18px;">© <span data-year></span> Jivesh Ramnath. Built for a serious portfolio presence.</div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-name">Jivesh Ramnath</div><div class="footer-meta">Research notes / © <span data-year></span></div></div><div class="footer-links"><a href="mailto:jivyzn@gmail.com">Email</a><a href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
 </body>
 </html>

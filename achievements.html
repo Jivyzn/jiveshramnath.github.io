@@ -1,153 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Achievements page for Jivesh Ramnath covering awards, education, volunteering, and leadership." />
-  <meta name="theme-color" content="#050816" />
-  <title>Achievements | Jivesh Ramnath</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Awards, leadership, education and external recognition earned by Jivesh Ramnath.">
+  <meta name="theme-color" content="#070806">
+  <meta name="color-scheme" content="dark">
+  <title>Proof — Jivesh Ramnath</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://jiveshramnath.co.za/achievements.html">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="achievements">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="noise-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="container">
-      <nav class="navbar">
-        <a class="brand" href="index.html">
-          <div class="brand-mark">JR</div>
-          <span>Jivesh Ramnath</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="projects.html">Projects</a>
-          <a href="achievements.html">Achievements</a>
-          <a href="research.html">Research</a>
-          <a class="nav-cta" href="mailto:jivyzn@gmail.com">Contact</a>
-        </div>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>☰</button>
-      </nav>
-      <div class="mobile-panel" data-mobile-panel>
-        <a href="index.html" data-close-panel>Home</a>
-        <a href="projects.html" data-close-panel>Projects</a>
-        <a href="achievements.html" data-close-panel>Achievements</a>
-        <a href="research.html" data-close-panel>Research</a>
-        <a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a>
-      </div>
-    </div>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JR</span><span>Jivesh Ramnath</span></a>
+      <div class="nav-links"><a href="index.html" data-nav-link>Home</a><a href="projects.html" data-nav-link>Projects</a><a href="achievements.html" data-nav-link>Proof</a><a href="research.html" data-nav-link>Research</a></div>
+      <div class="nav-right"><span class="nav-status"><span class="status-dot"></span> External validation</span><a class="button ghost" href="mailto:jivyzn@gmail.com">Contact</a><button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>☰</button></div>
+    </nav>
+    <div class="mobile-panel" data-mobile-panel><a href="index.html" data-nav-link data-close-panel>Home</a><a href="projects.html" data-nav-link data-close-panel>Projects</a><a href="achievements.html" data-nav-link data-close-panel>Proof</a><a href="research.html" data-nav-link data-close-panel>Research</a><a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a></div>
   </header>
-  
-  <main>
+
+  <main id="main">
     <section class="page-hero">
       <div class="container">
-        <div class="reveal">
-          <div class="badge"><span class="eyebrow-dot"></span> Recognition and leadership</div>
-          <h1><span class="gradient-text">Achievements</span> that add proof.</h1>
-          <p>
-            This page separates awards, leadership, volunteering, and education so selectors can quickly understand the level of achievement.
-          </p>
+        <div class="page-hero-grid">
+          <div><div class="kicker reveal">Recognition / leadership / education</div><h1 class="page-title reveal">Proof,<br><span class="acid">not hype.</span></h1></div>
+          <p class="page-deck reveal">A compact record of where the work was judged, what responsibility I carried and how the trajectory developed.</p>
+        </div>
+        <div class="page-rule"></div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-label="Achievement metrics">
+      <div class="container">
+        <div class="metric-band reveal">
+          <div class="metric-cell"><strong>1st</strong><span>Overall in Africa at Cars4Mars, 2025.</span></div>
+          <div class="metric-cell"><strong>Gold</strong><span>Eskom Expo KZN plus Best Innovation.</span></div>
+          <div class="metric-cell"><strong>Silver</strong><span>IRIS India 2026, computer science.</span></div>
+          <div class="metric-cell"><strong>2×</strong><span>Cars4Mars Best Design recognition.</span></div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container grid cols-3">
-        <div class="card reveal">
-          <h3>Regional gold + best innovation</h3>
-          <p>Eskom Expo for Young Scientists. Gold medal winner and best innovation project overall.</p>
-        </div>
-        <div class="card reveal">
-          <h3>International science fair</h3>
-          <p>Eskom Expo for Young Scientists International Science Fair. Silver medal recognition.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Cars4Mars overall win</h3>
-          <p>Martian Mechanics placed first and won overall, with Best Design Award success across multiple years.</p>
+      <div class="container timeline-shell">
+        <aside class="timeline-aside reveal">
+          <span class="section-index">[01] SELECTED RECORD</span>
+          <h2>A timeline of building, competing and leading.</h2>
+        </aside>
+        <div class="timeline-list">
+          <article class="timeline-entry reveal">
+            <time datetime="2026">2026</time>
+            <div><span class="label">International recognition</span><h3>IRIS Silver Medal — India</h3><p>JØ7 Vireo received silver-medal recognition in computer science at the Initiative for Research and Innovation in STEM.</p></div>
+          </article>
+          <article class="timeline-entry reveal">
+            <time datetime="2025">2025</time>
+            <div><span class="label">Science & innovation</span><h3>Eskom Expo Gold + Best Innovation</h3><p>Regional gold and Best Innovation recognition for an assistive edge-AI system designed around affordability and offline use.</p></div>
+          </article>
+          <article class="timeline-entry reveal">
+            <time datetime="2025">2025</time>
+            <div><span class="label">Robotics</span><h3>Cars4Mars — 1st Overall in Africa</h3><p>Team Martian Mechanics won the overall challenge and Best Design, following a third-place African finish and Best Design in 2024.</p></div>
+          </article>
+          <article class="timeline-entry reveal">
+            <time datetime="2025">2025</time>
+            <div><span class="label">International science fair</span><h3>Eskom Expo ISF Silver</h3><p>Silver-medal recognition at the Eskom Expo International Science Fair in Johannesburg.</p></div>
+          </article>
+          <article class="timeline-entry reveal">
+            <time datetime="2024">2024</time>
+            <div><span class="label">Hackathon</span><h3>ITWeb farm-security challenge winner</h3><p>Built a practical security system under hackathon time pressure, following a SafeLink anti-phishing win in 2023.</p></div>
+          </article>
+          <article class="timeline-entry reveal">
+            <time datetime="2023">2023</time>
+            <div><span class="label">Technology community</span><h3>Geekulcha “Hackers of the Year” recognition</h3><p>Recognised through youth technology and hackathon participation, with further recognition in 2024.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container feature-grid">
-        <div class="card reveal">
-          <h2 style="margin-top:0; letter-spacing:-0.04em;">Timeline</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>University of KwaZulu-Natal</h3>
-                <div class="time">Bachelor of Science — Computer Science & Statistics · Feb 2026 to Dec 2028</div>
-                <p>Current degree path building the theoretical base behind AI, data science, and software systems.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>Hoërskool Richards Bay</h3>
-                <div class="time">2021 to 2025</div>
-                <p>Completed secondary school with a Bachelor’s pass and leadership experience.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>AlgoAtWork Robotics</h3>
-                <div class="time">Feb 2021 to Nov 2023</div>
-                <p>Foundation in robotics, networking, and practical STEM problem solving.</p>
-              </div>
-            </div>
-          </div>
+    <section class="section compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="section-index">[02] EDUCATION & RESPONSIBILITY</span><h2 class="section-title">Technical growth with responsibility attached.</h2></div>
+          <p class="section-intro">The strongest signal is not a title by itself. It is whether the role required judgement, coordination and follow-through.</p>
         </div>
-
-        <div class="card reveal">
-          <h2 style="margin-top:0; letter-spacing:-0.04em;">Volunteering</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>FIRST LEGO LEAGUE CHALLENGE — Table manager</h3>
-                <div class="time">Oct 2023 · 1 month</div>
-                <p>Managed practice tables, prevented issues, and supported younger participants.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>FIRST LEGO LEAGUE CHALLENGE — Referee</h3>
-                <div class="time">Oct 2024 · 1 month</div>
-                <p>Refereed matches, tallied points fairly, and judged gameplay integrity.</p>
-              </div>
-            </div>
-          </div>
-          <div class="chips" style="margin-top:18px;">
-            <span class="chip">Leadership</span>
-            <span class="chip">Time management</span>
-            <span class="chip">Fairness</span>
-            <span class="chip">Mentorship</span>
-          </div>
+        <div class="proof-grid">
+          <article class="proof-card reveal"><span class="proof-year">2026—2028</span><div><strong>BSc Computer Science & Statistics</strong><p>University of KwaZulu-Natal.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2025</span><div><strong>Academic Head, RCL</strong><p>Student leadership focused on academic coordination and representation.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2023—2025</span><div><strong>Volleyball captain & coach</strong><p>Competitive leadership followed by mentoring younger players.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2023—2024</span><div><strong>FIRST LEGO League volunteer</strong><p>Table manager and referee supporting fair, reliable competition.</p></div></article>
         </div>
       </div>
     </section>
+
+    <section class="section compact"><div class="container"><div class="contact-panel reveal"><h2>The record is useful. The next problem matters more.</h2><a class="button" href="projects.html">View the systems</a></div></div></section>
   </main>
-    
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <strong>Jivesh Ramnath</strong>
-          <div style="margin-top:8px;">Machine Learning Student | AI & Computer Vision Developer | Embedded AI</div>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:jivyzn@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="projects.html">Projects</a>
-          <a href="research.html">Research</a>
-        </div>
-      </div>
-      <div style="margin-top:18px;">© <span data-year></span> Jivesh Ramnath. Built for a serious portfolio presence.</div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-name">Jivesh Ramnath</div><div class="footer-meta">Proof archive / © <span data-year></span></div></div><div class="footer-links"><a href="mailto:jivyzn@gmail.com">Email</a><a href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
 </body>
 </html>

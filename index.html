@@ -1,266 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="description" content="Portfolio website for Jivesh Ramnath, focused on AI, computer vision, embedded systems, and research-grade projects." />
-  <meta name="theme-color" content="#050816" />
-
-  <title>Jivesh Ramnath | AI Developer Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jivesh Ramnath builds deployable machine learning, computer vision, robotics, and embedded AI systems in South Africa.">
+  <meta name="theme-color" content="#070806">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Jivesh Ramnath — Machine Intelligence, Built for Reality">
+  <meta property="og:description" content="Edge AI, computer vision, robotics and research-led engineering.">
+  <meta property="og:image" content="https://jiveshramnath.co.za/assets/profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jiveshramnath.co.za/">
+  <title>Jivesh Ramnath — AI, Computer Vision & Robotics</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://jiveshramnath.co.za/">
+  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Jivesh Ramnath",
-    "givenName": "Jivesh",
-    "familyName": "Ramnath",
-    "jobTitle": "AI & Computer Vision Developer",
-    "description": "Machine Learning and Computer Vision developer focused on edge AI, robotics, and low-cost intelligent systems.",
-    "nationality": {
-      "@type": "Country",
-      "name": "South Africa"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "University of KwaZulu-Natal"
-    },
-    "knowsAbout": [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Computer Vision",
-      "Robotics",
-      "Embedded Systems",
-      "YOLOv8",
-      "Raspberry Pi"
-    ],
-    "email": "mailto:jivdev07@gmail.com",
-    "url": "https://jiveshramnath.github.io",
-    "image": "https://jiveshramnath.github.io/assets/profile.jpg",
+    "url": "https://jiveshramnath.co.za",
+    "image": "https://jiveshramnath.co.za/assets/profile.jpg",
+    "email": "mailto:jivyzn@gmail.com",
+    "jobTitle": "Machine Learning Student and AI Developer",
+    "affiliation": {"@type":"CollegeOrUniversity","name":"University of KwaZulu-Natal"},
     "sameAs": [
-      "https://www.linkedin.com/in/jivesh-ramnath-724721296",
-      "https://github.com/Jivyzn"
-    ]
+      "https://github.com/Jivyzn",
+      "https://www.linkedin.com/in/jivesh-ramnath-724721296"
+    ],
+    "knowsAbout": ["Machine Learning","Computer Vision","Edge AI","Robotics","Embedded Systems","Data Science"]
   }
   </script>
+  <script src="script.js" defer></script>
 </head>
-
-<body class="home">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="noise-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="container">
-      <nav class="navbar">
-        <a class="brand" href="index.html">
-          <div class="brand-mark">JR</div>
-          <span>Jivesh Ramnath</span>
-        </a>
-
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="projects.html">Projects</a>
-          <a href="achievements.html">Achievements</a>
-          <a href="research.html">Research</a>
-          <a class="nav-cta" href="mailto:jivdev07@gmail.com">Contact</a>
-        </div>
-
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>☰</button>
-      </nav>
-
-      <div class="mobile-panel" data-mobile-panel>
-        <a href="index.html" data-close-panel>Home</a>
-        <a href="projects.html" data-close-panel>Projects</a>
-        <a href="achievements.html" data-close-panel>Achievements</a>
-        <a href="research.html" data-close-panel>Research</a>
-        <a href="mailto:jivdev07@gmail.com" data-close-panel>Contact</a>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Jivesh Ramnath home">
+        <span class="brand-mark">JR</span><span>Jivesh Ramnath</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-nav-link>Home</a>
+        <a href="projects.html" data-nav-link>Projects</a>
+        <a href="achievements.html" data-nav-link>Proof</a>
+        <a href="research.html" data-nav-link>Research</a>
       </div>
+      <div class="nav-right">
+        <span class="nav-status"><span class="status-dot"></span> Open to serious work</span>
+        <a class="button ghost" href="mailto:jivyzn@gmail.com">Contact</a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>☰</button>
+      </div>
+    </nav>
+    <div class="mobile-panel" data-mobile-panel>
+      <a href="index.html" data-nav-link data-close-panel>Home</a>
+      <a href="projects.html" data-nav-link data-close-panel>Projects</a>
+      <a href="achievements.html" data-nav-link data-close-panel>Proof</a>
+      <a href="research.html" data-nav-link data-close-panel>Research</a>
+      <a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-
-          <div class="reveal">
-            <div class="eyebrow">
-              <span class="eyebrow-dot"></span>
-              Durban, KwaZulu-Natal · UKZN · Edge AI, CV, Robotics
-            </div>
-
-            <h1>
-              <span class="gradient-text">Machine Learning</span><br>
-              student building real systems.
-            </h1>
-
-            <p class="lead">
-              Jivesh Ramnath develops low-cost AI and embedded vision systems with a bias for deployment, not demos.
-              Focused on assistive technology, object detection, sensor fusion, and real-world engineering.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button primary" href="projects.html">View Projects</a>
-              <a class="button secondary" href="achievements.html">See Achievements</a>
-              <a class="button secondary" href="research.html">Research Focus</a>
-            </div>
-
-            <div style="margin-top:40px;">
-              <img
-                src="assets/profile.jpg"
-                alt="Jivesh Ramnath"
-                style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid rgba(96,165,250,0.6);box-shadow:0 0 40px rgba(96,165,250,0.3);display:block;"
-              >
-            </div>
-
-            <div class="hero-metrics">
-              <div class="metric">
-                <strong>Edge AI</strong>
-                <span>YOLOv8, Hailo, Raspberry Pi, real-time inference.</span>
-              </div>
-
-              <div class="metric">
-                <strong>Robotics</strong>
-                <span>Cars4Mars rover, CAD, sensors, embedded systems.</span>
-              </div>
-
-              <div class="metric">
-                <strong>Recognition</strong>
-                <span>Gold medal, innovation awards, science fair results.</span>
-              </div>
-
-              <div class="metric">
-                <strong>Impact Focus</strong>
-                <span>Assistive tech, offline AI, low-cost systems.</span>
-              </div>
-            </div>
-          </div>
-
-          <aside class="hero-panel reveal">
-            <div class="hero-panel-inner">
-              <div class="panel-top" style="justify-content:flex-start;">
-                <div class="status"><span class="status-dot"></span> Available for opportunities</div>
-              </div>
-
-              <h2 class="panel-name">Jivesh Ramnath</h2>
-
-              <p class="panel-role">
-                Machine Learning Student | AI & Computer Vision Developer | Embedded AI | Object Detection Systems
-              </p>
-
-              <div class="panel-list">
-                <div class="item">
-                  <div class="item-icon">⚡</div>
-                  <p>Building a wearable assistive vision system with real-time detection + voice feedback.</p>
-                </div>
-
-                <div class="item">
-                  <div class="item-icon">🧠</div>
-                  <p>Full ML pipeline: annotation → training → deployment on edge devices.</p>
-                </div>
-
-                <div class="item">
-                  <div class="item-icon">🛠️</div>
-                  <p>Python, PyTorch, OpenCV, Raspberry Pi, ESP32, PCB design, CAD, IoT.</p>
-                </div>
-              </div>
-            </div>
-          </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
           <div>
-            <h2>Why this portfolio is different</h2>
-            <p>Built like a technical engineering profile, not a student template.</p>
+            <div class="kicker reveal">Durban, South Africa / UKZN / 2026</div>
+            <h1 class="display-title" aria-label="I build intelligence that leaves the lab">
+              <span class="line reveal"><span>I build</span></span>
+              <span class="line reveal reveal-delay-1"><span>intelligence</span></span>
+              <span class="line reveal reveal-delay-2"><span>that leaves <em>the lab.</em></span></span>
+            </h1>
+            <p class="hero-copy reveal">
+              I’m Jivesh Ramnath — a computer science and statistics student engineering machine-learning systems that have to survive real hardware, real constraints and real users.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="button primary" href="projects.html">Enter the work</a>
+              <a class="button ghost" href="achievements.html">See the evidence</a>
+            </div>
+          </div>
+
+          <div class="hero-portrait reveal" data-tilt>
+            <img src="assets/profile.jpg" alt="Jivesh Ramnath at the Eskom Expo for Young Scientists" width="1000" height="678">
+            <span class="orbit-label">BUILD<br>TEST<br>DEPLOY</span>
+            <div class="portrait-caption">
+              <div><strong>Jivesh Ramnath</strong><span>ML / CV / Embedded AI</span></div>
+              <span class="mono">01 / 04</span>
+            </div>
           </div>
         </div>
 
-        <div class="grid cols-3">
-          <div class="card reveal">
-            <h3>Outcome-first</h3>
-            <p>Focus on deployed systems, not theoretical projects.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Real credibility</h3>
-            <p>Competitions, awards, and engineering experience clearly structured.</p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Scalable structure</h3>
-            <p>Ready for GitHub integration, case studies, and expansion.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container feature-grid">
-        <div class="feature-card reveal">
-          <div class="eyebrow" style="margin-bottom:16px;">
-            <span class="eyebrow-dot"></span> Featured Project
-          </div>
-
-          <h2 class="project-title">JØ7 VIREO</h2>
-
-          <p class="lead" style="margin-top:0; max-width:none;">
-            Low-cost edge AI assistive vision system using YOLOv8 for real-time detection,
-            distance estimation, and offline voice feedback.
-          </p>
-
-          <div class="project-meta">
-            <span class="meta-pill">Object detection</span>
-            <span class="meta-pill">Edge AI</span>
-            <span class="meta-pill">Raspberry Pi</span>
-            <span class="meta-pill">LiDAR safety</span>
-          </div>
-        </div>
-
-        <div class="card reveal">
-          <h3>Core Stack</h3>
-          <p>Python, PyTorch, YOLOv8, OpenCV, Hailo, Raspberry Pi, ESP32, Arduino, Fusion 360, PCB design.</p>
+        <div class="hero-foot reveal">
+          <p>Current trajectory: autonomous rover navigation, crash-risk modelling and the next generation of JØ7 Vireo.</p>
+          <span class="scroll-cue">Scroll to navigate</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <div class="signal-strip" aria-hidden="true">
+      <div class="signal-track">
+        <span>Computer Vision</span><span>Edge Inference</span><span>Robotics</span><span>Data Science</span><span>Embedded Systems</span><span>Accessible Technology</span>
+        <span>Computer Vision</span><span>Edge Inference</span><span>Robotics</span><span>Data Science</span><span>Embedded Systems</span><span>Accessible Technology</span>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="selected-work">
       <div class="container">
-        <h2>Contact</h2>
+        <div class="section-head reveal">
+          <div>
+            <span class="section-index">[01] SELECTED SYSTEMS</span>
+            <h2 class="section-title" id="selected-work">Projects built around consequence, not decoration.</h2>
+          </div>
+          <p class="section-intro">The common thread is deployment: constrained compute, uncertain environments, limited budgets and measurable outcomes.</p>
+        </div>
 
-        <p>Email: <a href="mailto:jivdev07@gmail.com">jivdev07@gmail.com</a></p>
-
-        <p>LinkedIn:
-          <a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noopener noreferrer">
-            View Profile
+        <div class="project-stack">
+          <a class="project-row reveal" href="vireo.html" aria-label="Open JØ7 Vireo interactive case study">
+            <span class="project-number">01</span>
+            <h3 class="project-name">J<span class="wormhole-letter" aria-hidden="true">Ø</span>7 Vireo<small>Assistive vision / flagship system</small></h3>
+            <p class="project-summary">Offline wearable vision using object detection, distance awareness, voice feedback and haptics.</p>
+            <div class="project-tags"><span>YOLO</span><span>Hailo</span><span>Raspberry Pi</span></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </a>
-        </p>
 
-        <p>GitHub:
-          <a href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">
-            github.com/Jivyzn
+          <a class="project-row reveal" href="projects.html#rover">
+            <span class="project-number">02</span>
+            <h3 class="project-name">Mars Rover<small>Autonomy / mechanical systems</small></h3>
+            <p class="project-summary">Six-wheel Ackermann rover, simulated perception and target-seeking autonomy under competition constraints.</p>
+            <div class="project-tags"><span>Webots</span><span>CV</span><span>Control</span></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </a>
-        </p>
+
+          <a class="project-row reveal" href="projects.html#traffic">
+            <span class="project-number">03</span>
+            <h3 class="project-name">Road Risk Atlas<small>Data science / public safety</small></h3>
+            <p class="project-summary">A South African crash-risk model designed to estimate high-risk hours and road segments.</p>
+            <div class="project-tags"><span>Python</span><span>XGBoost</span><span>GIS</span></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" aria-labelledby="capabilities">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-index">[02] CAPABILITY MAP</span>
+            <h2 class="section-title" id="capabilities">One system, many layers.</h2>
+          </div>
+          <p class="section-intro">I work across the full path from dataset to decision, then into the physical world.</p>
+        </div>
+
+        <div class="capability-grid reveal">
+          <div class="capability-panel">
+            <h3>Technical stack</h3>
+            <div class="stack-list">
+              <div class="stack-item"><span>Machine learning</span><span>PyTorch / YOLO / XGBoost</span></div>
+              <div class="stack-item"><span>Computer vision</span><span>OpenCV / ONNX / Hailo</span></div>
+              <div class="stack-item"><span>Embedded systems</span><span>Pi / ESP32 / Arduino</span></div>
+              <div class="stack-item"><span>Simulation & CAD</span><span>Webots / Fusion 360</span></div>
+              <div class="stack-item"><span>Software systems</span><span>Python / C++ / SQL / Web</span></div>
+            </div>
+          </div>
+          <div class="capability-panel capability-visual" aria-label="Diagram connecting data, models, edge hardware and physical systems">
+            <div class="system-orbit">
+              <div class="system-core">SHIP</div>
+              <span class="orbit-node">Data</span>
+              <span class="orbit-node">Models</span>
+              <span class="orbit-node">Edge</span>
+              <span class="orbit-node">World</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-index">[03] EXTERNAL PROOF</span>
+            <h2 class="section-title" id="proof-title">The work has been tested outside my laptop.</h2>
+          </div>
+          <p class="section-intro">Competition results are not the goal. They are useful evidence that the engineering holds up under scrutiny.</p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-card reveal"><span class="proof-year">2026 / INDIA</span><div><strong>IRIS Silver Medal</strong><p>International recognition for JØ7 Vireo in computer science.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2025 / SOUTH AFRICA</span><div><strong>Eskom Gold + Best Innovation</strong><p>Regional gold and top innovation recognition.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2025 / AFRICA</span><div><strong>Cars4Mars — 1st Overall</strong><p>Overall African win with repeat Best Design recognition.</p></div></article>
+          <article class="proof-card reveal"><span class="proof-year">2023–2024</span><div><strong>Hackathon Wins</strong><p>Cybersecurity and farm-security systems built under time pressure.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <h2>Have a hard problem with a real user?</h2>
+          <a class="button" href="mailto:jivyzn@gmail.com?subject=Project%20or%20opportunity%20for%20Jivesh">Start a conversation</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      © <span data-year></span> Jivesh Ramnath. Built for engineering impact.
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="footer-name">Jivesh Ramnath</div><div class="footer-meta">Durban / South Africa<br>© <span data-year></span></div></div>
+      <div class="footer-links">
+        <a href="mailto:jivyzn@gmail.com">Email</a>
+        <a href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

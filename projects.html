@@ -1,170 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projects page for Jivesh Ramnath covering JØ7 VIREO, Cars4Mars, ML pipeline work, and embedded AI systems." />
-  <meta name="theme-color" content="#050816" />
-  <title>Projects | Jivesh Ramnath</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected projects by Jivesh Ramnath across computer vision, robotics, embedded AI and data science.">
+  <meta name="theme-color" content="#070806">
+  <meta name="color-scheme" content="dark">
+  <title>Projects — Jivesh Ramnath</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://jiveshramnath.co.za/projects.html">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="projects">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas class="noise-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
   <header class="site-header">
-    <div class="container">
-      <nav class="navbar">
-        <a class="brand" href="index.html">
-          <div class="brand-mark">JR</div>
-          <span>Jivesh Ramnath</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="projects.html">Projects</a>
-          <a href="achievements.html">Achievements</a>
-          <a href="research.html">Research</a>
-          <a class="nav-cta" href="mailto:jivyzn@gmail.com">Contact</a>
-        </div>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle>☰</button>
-      </nav>
-      <div class="mobile-panel" data-mobile-panel>
-        <a href="index.html" data-close-panel>Home</a>
-        <a href="projects.html" data-close-panel>Projects</a>
-        <a href="achievements.html" data-close-panel>Achievements</a>
-        <a href="research.html" data-close-panel>Research</a>
-        <a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JR</span><span>Jivesh Ramnath</span></a>
+      <div class="nav-links">
+        <a href="index.html" data-nav-link>Home</a><a href="projects.html" data-nav-link>Projects</a><a href="achievements.html" data-nav-link>Proof</a><a href="research.html" data-nav-link>Research</a>
       </div>
+      <div class="nav-right">
+        <span class="nav-status"><span class="status-dot"></span> Project archive</span>
+        <a class="button ghost" href="mailto:jivyzn@gmail.com">Contact</a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>☰</button>
+      </div>
+    </nav>
+    <div class="mobile-panel" data-mobile-panel>
+      <a href="index.html" data-nav-link data-close-panel>Home</a><a href="projects.html" data-nav-link data-close-panel>Projects</a><a href="achievements.html" data-nav-link data-close-panel>Proof</a><a href="research.html" data-nav-link data-close-panel>Research</a><a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a>
     </div>
   </header>
-  
-  <main>
+
+  <main id="main">
     <section class="page-hero">
       <div class="container">
-        <div class="reveal">
-          <div class="badge"><span class="eyebrow-dot"></span> Selected work</div>
-          <h1><span class="gradient-text">Projects</span> that prove the skillset.</h1>
-          <p>
-            Each project below is written like a case study: problem, stack, outcome, and why it matters.
-            That makes the site useful for bursaries, scholarship panels, internships, and competition judges.
-          </p>
-          <div class="filter-row">
-            <span class="filter-tag">Computer Vision</span>
-            <span class="filter-tag">Edge AI</span>
-            <span class="filter-tag">Robotics</span>
-            <span class="filter-tag">Embedded Systems</span>
-            <span class="filter-tag">Accessibility</span>
-          </div>
+        <div class="page-hero-grid">
+          <div><div class="kicker reveal">Selected systems / 2023—present</div><h1 class="page-title reveal">The<br><span class="acid">work.</span></h1></div>
+          <p class="page-deck reveal">Not a gallery of mockups. This archive tracks the problem, system architecture, deployment environment and the trade-offs that mattered.</p>
+        </div>
+        <div class="page-rule"></div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="filter-row reveal" aria-label="Filter projects">
+          <button class="filter-button active" type="button" data-filter="all">All systems</button>
+          <button class="filter-button" type="button" data-filter="vision">Computer vision</button>
+          <button class="filter-button" type="button" data-filter="robotics">Robotics</button>
+          <button class="filter-button" type="button" data-filter="data">Data science</button>
+          <button class="filter-button" type="button" data-filter="software">Software</button>
+        </div>
+
+        <div class="archive-grid">
+          <a class="archive-card reveal" href="vireo.html" data-project-card data-category="vision robotics" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 01</span><span class="card-status">Flagship · deployed</span></div>
+            <div>
+              <h2>J<span class="wormhole-letter" aria-hidden="true">Ø</span>7 Vireo</h2>
+              <p>An offline wearable assistive-vision platform that detects everyday objects, estimates distance and communicates through speech and haptic feedback.</p>
+              <div class="card-tags"><span>YOLOv8m</span><span>Hailo-8L</span><span>Raspberry Pi 5</span><span>ESP32-C6</span></div>
+            </div>
+            <div class="card-graphic rings" aria-hidden="true"></div>
+          </a>
+
+          <article class="archive-card reveal" id="rover" data-project-card data-category="vision robotics" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 02</span><span class="card-status">Active · competition</span></div>
+            <div>
+              <h2>Cars4Mars Rover</h2>
+              <p>Six-wheel rover with four-wheel steering, Webots simulation, multi-camera perception and ordered target approach while avoiding obstacles.</p>
+              <div class="card-tags"><span>Webots</span><span>YOLO</span><span>Ackermann</span><span>Control systems</span></div>
+            </div>
+            <div class="card-graphic gridline" aria-hidden="true"></div>
+          </article>
+
+          <article class="archive-card reveal" id="traffic" data-project-card data-category="data software" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 03</span><span class="card-status">Research prototype</span></div>
+            <div>
+              <h2>Road Risk Atlas</h2>
+              <p>A South African crash-risk pipeline that combines location, hour, weather, calendar effects and road context to identify dangerous segments.</p>
+              <div class="card-tags"><span>Python</span><span>XGBoost</span><span>Time series</span><span>Geospatial</span></div>
+            </div>
+            <div class="card-graphic wave" aria-hidden="true"></div>
+          </article>
+
+          <article class="archive-card reveal" data-project-card data-category="software" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 04</span><span class="card-status">Product concept</span></div>
+            <div>
+              <h2>WhatsApp Ops</h2>
+              <p>A lightweight order and invoice manager for small South African businesses, designed around the messaging workflow they already use.</p>
+              <div class="card-tags"><span>Next.js</span><span>FastAPI</span><span>Supabase</span><span>WhatsApp API</span></div>
+            </div>
+            <div class="card-graphic gridline" aria-hidden="true"></div>
+          </article>
+
+          <article class="archive-card reveal" data-project-card data-category="software data" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 05</span><span class="card-status">Local-first</span></div>
+            <div>
+              <h2>Local Agent</h2>
+              <p>A private local assistant built around Ollama with controlled file operations, document reading and structured terminal workflows.</p>
+              <div class="card-tags"><span>Python</span><span>Ollama</span><span>Qwen</span><span>Tool use</span></div>
+            </div>
+            <div class="card-graphic rings" aria-hidden="true"></div>
+          </article>
+
+          <article class="archive-card reveal" data-project-card data-category="vision" data-tilt>
+            <div class="card-top"><span class="card-index">PROJECT / 06</span><span class="card-status">ML pipeline</span></div>
+            <div>
+              <h2>Three-Class Detector</h2>
+              <p>Dataset cleaning, annotation, training and deployment for hammer, traffic-cone and tennis-ball detection in the rover environment.</p>
+              <div class="card-tags"><span>YOLO26m</span><span>Annotation</span><span>Evaluation</span><span>Edge deployment</span></div>
+            </div>
+            <div class="card-graphic wave" aria-hidden="true"></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid cols-2">
-        <article class="project-card reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Flagship project</div>
-          <h3>JØ7 VIREO — Assistive vision platform</h3>
-          <p class="caption">
-            A wearable offline assistive system that uses a custom-trained YOLOv8m model to detect 100 everyday object classes,
-            estimate distance, and provide audio feedback to visually impaired users.
-          </p>
-          <ul>
-            <li>Runs on edge hardware without cloud dependence.</li>
-            <li>Combines camera vision, distance awareness, and haptic safety feedback.</li>
-            <li>Built around low-cost hardware and reuse of repurposed lithium-ion batteries.</li>
-            <li>Designed for real-world navigation, privacy, and accessibility.</li>
-          </ul>
-          <div class="project-meta">
-            <span class="meta-pill">YOLOv8m</span>
-            <span class="meta-pill">Raspberry Pi</span>
-            <span class="meta-pill">Hailo</span>
-            <span class="meta-pill">LiDAR</span>
-            <span class="meta-pill">Audio feedback</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Competition engineering</div>
-          <h3>Cars4Mars African Rover Challenge</h3>
-          <p class="caption">
-            A rover systems project built through the Cars4Mars competition, combining 3D CAD, autonomous thinking, mechanical design,
-            electronics, and programming under contest constraints.
-          </p>
-          <ul>
-            <li>Team Martian Mechanics won Best Design Award two years in a row.</li>
-            <li>Placed first this year and won the competition overall.</li>
-            <li>Demonstrates mechanical design, systems thinking, and reliable build execution.</li>
-            <li>Useful proof of practical engineering ability under pressure.</li>
-          </ul>
-          <div class="project-meta">
-            <span class="meta-pill">3D CAD</span>
-            <span class="meta-pill">Robotics</span>
-            <span class="meta-pill">Systems design</span>
-            <span class="meta-pill">Teamwork</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> ML pipeline work</div>
-          <h3>Dataset annotation, training, and deployment</h3>
-          <p class="caption">
-            Work focused on the complete machine-learning lifecycle: collecting data, annotating it properly, training models,
-            evaluating performance, and deploying on constrained devices.
-          </p>
-          <ul>
-            <li>Hands-on experience with data annotation workflows.</li>
-            <li>Model training and debugging in PyTorch.</li>
-            <li>Performance-focused deployment for edge hardware.</li>
-            <li>Built around speed, accuracy, and reliability tradeoffs.</li>
-          </ul>
-          <div class="project-meta">
-            <span class="meta-pill">PyTorch</span>
-            <span class="meta-pill">OpenCV</span>
-            <span class="meta-pill">Annotation</span>
-            <span class="meta-pill">Deployment</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Technical growth area</div>
-          <h3>Embedded AI and sensor fusion exploration</h3>
-          <p class="caption">
-            Ongoing work connecting sensors, control systems, and computer vision so that software decisions map to physical-world actions.
-          </p>
-          <ul>
-            <li>Raspberry Pi and ESP32 integration.</li>
-            <li>Arduino IoT programming and hardware interfacing.</li>
-            <li>PCB design and electronics prototyping.</li>
-            <li>Practical focus on portability and cost.</li>
-          </ul>
-          <div class="project-meta">
-            <span class="meta-pill">ESP32</span>
-            <span class="meta-pill">IoT</span>
-            <span class="meta-pill">PCB design</span>
-            <span class="meta-pill">Sensors</span>
-          </div>
-        </article>
+    <section class="section compact">
+      <div class="container">
+        <div class="contact-panel reveal"><h2>See code, not claims.</h2><a class="button" href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">Open GitHub</a></div>
       </div>
     </section>
   </main>
-    
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <strong>Jivesh Ramnath</strong>
-          <div style="margin-top:8px;">Machine Learning Student | AI & Computer Vision Developer | Embedded AI</div>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:jivyzn@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="projects.html">Projects</a>
-          <a href="research.html">Research</a>
-        </div>
-      </div>
-      <div style="margin-top:18px;">© <span data-year></span> Jivesh Ramnath. Built for a serious portfolio presence.</div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-name">Jivesh Ramnath</div><div class="footer-meta">Project archive / © <span data-year></span></div></div><div class="footer-links"><a href="mailto:jivyzn@gmail.com">Email</a><a href="https://github.com/Jivyzn" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/jivesh-ramnath-724721296" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div></footer>
 </body>
 </html>

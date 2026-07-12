@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive JØ7 Vireo case study and real-time black-hole visual simulation by Jivesh Ramnath.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <title>JØ7 Vireo — Interactive Case Study</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://jiveshramnath.co.za/vireo.html">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="blackhole.js" defer></script>
+</head>
+<body class="vireo-page">
+  <a class="skip-link" href="#case-study">Skip simulation</a>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
+  <header class="site-header vireo-header">
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">JR</span><span>Jivesh Ramnath</span></a>
+      <div class="nav-links"><a href="index.html" data-nav-link>Home</a><a href="projects.html" data-nav-link>Projects</a><a href="achievements.html" data-nav-link>Proof</a><a href="research.html" data-nav-link>Research</a></div>
+      <div class="nav-right"><span class="nav-status"><span class="status-dot"></span> Vireo field active</span><a class="button ghost" href="projects.html">Exit field</a><button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-toggle>☰</button></div>
+    </nav>
+    <div class="mobile-panel" data-mobile-panel><a href="index.html" data-close-panel>Home</a><a href="projects.html" data-close-panel>Projects</a><a href="achievements.html" data-close-panel>Proof</a><a href="research.html" data-close-panel>Research</a><a href="mailto:jivyzn@gmail.com" data-close-panel>Contact</a></div>
+  </header>
+
+  <main>
+    <section class="singularity-hero" aria-label="Interactive black-hole visual simulation">
+      <canvas id="blackhole-canvas" aria-label="Animated visual approximation of gravitational lensing and an accretion disk"></canvas>
+      <div class="sim-panel" data-sim-panel>
+        <label>Mass proxy <input id="mass-control" type="range" min="0.60" max="2.20" value="1.15" step="0.05"></label>
+        <label>Spin proxy <input id="spin-control" type="range" min="0" max="0.99" value="0.68" step="0.01"></label>
+        <label>Disk emission <input id="disk-control" type="range" min="0.35" max="1.80" value="1.00" step="0.05"></label>
+        <p class="sim-note">Numerically integrated ray-bending approximation with a procedural relativistic accretion disk. Visual model—not a full Kerr-metric solver.</p>
+      </div>
+
+      <div class="singularity-overlay">
+        <div class="kicker">Clicking Ø opened the field</div>
+        <h1 class="singularity-title">J<span>Ø</span>7<br>Vireo</h1>
+        <p class="singularity-copy">The black hole is a visual metaphor for the project’s core idea: compress complex sensing into a signal a person can act on immediately.</p>
+        <div class="simulation-hud">
+          <div class="hud-readout">
+            <span>Mass <strong data-mass-readout>1.15 M⊙</strong></span>
+            <span>Spin <strong data-spin-readout>0.68</strong></span>
+            <span>Render <strong><span data-fps-readout>60</span> FPS</strong></span>
+          </div>
+          <div class="hud-controls">
+            <button class="hud-button" type="button" data-sim-pause>Pause field</button>
+            <button class="hud-button" type="button" data-panel-toggle>Toggle controls</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="vireo-content" id="case-study">
+      <section class="section">
+        <div class="container">
+          <div class="case-hero reveal">
+            <div class="case-panel">
+              <span class="section-index">CASE STUDY / 01</span>
+              <h2>Vision translated into action.</h2>
+              <p>JØ7 Vireo is a low-cost, offline assistive-vision platform for blind and visually impaired users. It combines object detection, distance awareness, speech and haptic feedback on edge hardware.</p>
+              <div class="card-tags"><span>Privacy by default</span><span>Offline inference</span><span>Low-cost design</span><span>Accessible feedback</span></div>
+            </div>
+            <div class="case-panel case-diagram" aria-label="Abstract Vireo wearable device diagram">
+              <div class="device-shell"><span class="sensor-ray"></span><span class="sensor-ray"></span><span class="sensor-ray"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><span class="section-index">[01] SYSTEM ARCHITECTURE</span><h2 class="section-title">Sense. Interpret. Communicate.</h2></div>
+            <p class="section-intro">The system is designed so perception never ends as a bounding box on a screen. It must become useful guidance.</p>
+          </div>
+          <div class="method-flow reveal">
+            <div class="method-step"><b>01</b><strong>Capture</strong><p>Camera and distance sensors observe the near environment.</p></div>
+            <div class="method-step"><b>02</b><strong>Infer</strong><p>Object detection runs locally on Raspberry Pi and Hailo acceleration.</p></div>
+            <div class="method-step"><b>03</b><strong>Prioritise</strong><p>Software decides what is relevant enough to interrupt the user.</p></div>
+            <div class="method-step"><b>04</b><strong>Respond</strong><p>Speech and a haptic belt communicate direction and urgency.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="container">
+          <div class="case-stats reveal">
+            <div class="case-stat"><strong>3,285</strong><span>Images in the recorded project dataset.</span></div>
+            <div class="case-stat"><strong>26</strong><span>TOPS available through the Hailo-8L accelerator.</span></div>
+            <div class="case-stat"><strong>Offline</strong><span>No cloud dependency for core perception and feedback.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container timeline-shell">
+          <aside class="timeline-aside reveal"><span class="section-index">[02] DESIGN CONSTRAINTS</span><h2>The constraints shaped the invention.</h2></aside>
+          <div class="timeline-list">
+            <article class="timeline-entry reveal"><time>01</time><div><span class="label">Affordability</span><h3>Keep the full system below premium assistive-device pricing.</h3><p>Commodity compute, repurposed cells and modular components reduce cost without forcing cloud dependence.</p></div></article>
+            <article class="timeline-entry reveal"><time>02</time><div><span class="label">Privacy</span><h3>Video should not need to leave the device.</h3><p>Local inference protects environmental imagery and keeps the system functional when connectivity disappears.</p></div></article>
+            <article class="timeline-entry reveal"><time>03</time><div><span class="label">Cognitive load</span><h3>More detections can make the product worse.</h3><p>Useful feedback requires prioritisation, timing and restraint rather than narrating every object in view.</p></div></article>
+            <article class="timeline-entry reveal"><time>04</time><div><span class="label">Failure</span><h3>Safety signals need redundancy.</h3><p>Visual inference, distance sensing and haptics cover different weaknesses instead of pretending one sensor is infallible.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compact"><div class="container"><div class="contact-panel reveal"><h2>Vireo is a system, not a science-fair prop.</h2><a class="button" href="mailto:jivyzn@gmail.com?subject=J%C3%987%20Vireo">Discuss the project</a></div></div></section>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="footer-name">JØ7 Vireo</div><div class="footer-meta">Interactive case study / © <span data-year></span></div></div><div class="footer-links"><a href="projects.html">All projects</a><a href="research.html">Research</a><a href="mailto:jivyzn@gmail.com">Email</a></div></div></footer>
+</body>
+</html>
