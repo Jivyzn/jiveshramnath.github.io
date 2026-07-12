@@ -10,7 +10,9 @@
   const fpsReadout = document.querySelector('[data-fps-readout]');
   const panel = document.querySelector('[data-sim-panel]');
   const panelToggle = document.querySelector('[data-panel-toggle]');
+  const panelCloseButtons = document.querySelectorAll('[data-panel-close]');
   const pauseButton = document.querySelector('[data-sim-pause]');
+  const mobileControlsQuery = window.matchMedia('(max-width: 760px)');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const captureMode = new URLSearchParams(window.location.search).has('capture');
 
@@ -453,7 +455,34 @@
   diskInput?.addEventListener('input', () => {
     state.brightness = Number(diskInput.value);
   });
-  panelToggle?.addEventListener('click', () => panel?.classList.toggle('is-hidden'));
+  function setPanelHidden(hidden) {
+    if (!panel) return;
+    panel.classList.toggle('is-hidden', hidden);
+    panel.setAttribute('aria-hidden', String(hidden));
+    panelToggle?.setAttribute('aria-expanded', String(!hidden));
+    document.body.classList.toggle('sim-controls-open', !hidden && mobileControlsQuery.matches);
+  }
+
+  function syncPanelLayout(event) {
+    setPanelHidden(event.matches);
+  }
+
+  panelToggle?.addEventListener('click', () => {
+    setPanelHidden(!panel?.classList.contains('is-hidden'));
+  });
+  panelCloseButtons.forEach((button) => {
+    button.addEventListener('click', () => setPanelHidden(true));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileControlsQuery.matches) {
+      setPanelHidden(true);
+    }
+  });
+  if (mobileControlsQuery.addEventListener) {
+    mobileControlsQuery.addEventListener('change', syncPanelLayout);
+  } else {
+    mobileControlsQuery.addListener(syncPanelLayout);
+  }
   pauseButton?.addEventListener('click', () => {
     state.running = !state.running;
     resetFrameClock();
@@ -474,6 +503,7 @@
   }
 
   resize();
+  syncPanelLayout(mobileControlsQuery);
   updateReadouts();
   animationFrame = requestAnimationFrame(draw);
 })();

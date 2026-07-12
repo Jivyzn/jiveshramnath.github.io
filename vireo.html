@@ -29,10 +29,17 @@
   <main>
     <section class="singularity-hero" aria-label="Interactive black-hole visual simulation">
       <canvas id="blackhole-canvas" aria-label="Animated visual approximation of gravitational lensing and an accretion disk"></canvas>
-      <div class="sim-panel" data-sim-panel>
-        <label>Mass proxy <input id="mass-control" type="range" min="0.60" max="2.20" value="1.15" step="0.05"></label>
-        <label>Spin proxy <input id="spin-control" type="range" min="0" max="0.99" value="0.68" step="0.01"></label>
-        <label>Disk emission <input id="disk-control" type="range" min="0.35" max="1.80" value="1.00" step="0.05"></label>
+      <button class="sim-panel-scrim" type="button" data-panel-close aria-label="Close simulation controls"></button>
+      <div class="sim-panel" id="simulation-controls" data-sim-panel aria-label="Black-hole simulation controls">
+        <div class="sim-panel-head">
+          <span>Field controls</span>
+          <button class="sim-panel-close" type="button" data-panel-close aria-label="Close simulation controls">Close</button>
+        </div>
+        <div class="sim-control-stack">
+          <label>Mass proxy <input id="mass-control" type="range" min="0.60" max="2.20" value="1.15" step="0.05"></label>
+          <label>Spin proxy <input id="spin-control" type="range" min="0" max="0.99" value="0.68" step="0.01"></label>
+          <label>Disk emission <input id="disk-control" type="range" min="0.35" max="1.80" value="1.00" step="0.05"></label>
+        </div>
         <p class="sim-note">Numerically integrated ray-bending approximation with a procedural relativistic accretion disk. Visual model—not a full Kerr-metric solver.</p>
       </div>
 
@@ -48,7 +55,7 @@
           </div>
           <div class="hud-controls">
             <button class="hud-button" type="button" data-sim-pause>Pause field</button>
-            <button class="hud-button" type="button" data-panel-toggle>Toggle controls</button>
+            <button class="hud-button" type="button" data-panel-toggle aria-controls="simulation-controls" aria-expanded="true">Toggle controls</button>
           </div>
         </div>
       </div>

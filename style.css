@@ -680,6 +680,7 @@ body.vireo-page { background: #000; }
 .hud-controls { display: flex; gap: .6rem; }
 .hud-button { padding: .6rem .8rem; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; background: rgba(0,0,0,.4); cursor: pointer; font: .58rem/1 "IBM Plex Mono", monospace; text-transform: uppercase; }
 .hud-button:hover { background: var(--paper); color: var(--ink); }
+.sim-panel-scrim { display: none; }
 .sim-panel {
   position: absolute;
   z-index: 4;
@@ -695,6 +696,29 @@ body.vireo-page { background: #000; }
   transition: opacity .2s ease, transform .2s ease;
 }
 .sim-panel.is-hidden { opacity: 0; transform: translateX(30px); pointer-events: none; }
+.sim-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--paper);
+  font: .6rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sim-panel-close {
+  display: none;
+  padding: .45rem .65rem;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: var(--paper);
+  cursor: pointer;
+  font: .56rem/1 "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+}
+.sim-control-stack { display: grid; }
 .sim-panel label { display: grid; gap: .55rem; margin-bottom: 1rem; color: #b9bbb1; font: .58rem/1 "IBM Plex Mono", monospace; text-transform: uppercase; }
 .sim-panel input[type="range"] { width: 100%; accent-color: var(--acid); }
 .sim-note { margin: 0; color: #777a70; font-size: .7rem; }
@@ -739,6 +763,24 @@ body.vireo-page { background: #000; }
 
 @media (max-width: 760px) {
   :root { --container: min(100% - 28px, 1240px); --radius: 18px; }
+  .sim-panel-scrim {
+    display: block;
+    position: fixed;
+    z-index: 80;
+    inset: 68px 0 0;
+    border: 0;
+    background: rgba(0,0,0,.42);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .2s ease, visibility .2s ease;
+  }
+  body.vireo-page.sim-controls-open .sim-panel-scrim {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .navbar { height: 68px; }
   .brand span:last-child { display: none; }
   .nav-links, .nav-right .button { display: none; }
@@ -769,8 +811,40 @@ body.vireo-page { background: #000; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-links { justify-content: start; }
   .simulation-hud { grid-template-columns: 1fr; }
-  .hud-controls { justify-content: start; }
-  .sim-panel { top: 80px; }
+  .hud-controls { justify-content: start; flex-wrap: wrap; }
+  .hud-button { min-height: 40px; padding-inline: .9rem; }
+  .sim-panel {
+    position: fixed;
+    z-index: 90;
+    top: calc(68px + 10px + env(safe-area-inset-top));
+    right: 14px;
+    left: 14px;
+    width: auto;
+    max-height: calc(100svh - 96px - env(safe-area-inset-bottom));
+    padding: 1rem 1rem 1.1rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 18px;
+    background: rgba(7, 9, 12, .94);
+    box-shadow: 0 22px 80px rgba(0,0,0,.72);
+    backdrop-filter: blur(22px) saturate(1.18);
+    transform: translateY(0);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  }
+  .sim-panel.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-14px);
+    pointer-events: none;
+  }
+  .sim-panel-close { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; }
+  .sim-panel label { gap: .7rem; margin-bottom: .85rem; font-size: .62rem; }
+  .sim-panel input[type="range"] {
+    min-height: 34px;
+    margin: 0;
+    touch-action: pan-x;
+  }
+  .sim-note { padding-top: .15rem; font-size: .66rem; line-height: 1.45; }
   .singularity-title { font-size: clamp(4rem, 24vw, 8rem); }
   .case-stats { grid-template-columns: 1fr; }
 }
